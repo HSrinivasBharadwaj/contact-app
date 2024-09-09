@@ -6,9 +6,11 @@ import {
 } from "../features/contacts/contactSlice";
 import { RootState } from "../app/store";
 import { Contact } from "../types/types";
+import { useNavigate } from "react-router-dom";
 
 const ContactList: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
   const [editingContact, setEditingContact] = useState<Contact | null>(null);
   const [firstName, setFirstName] = useState<string>("");
@@ -39,6 +41,10 @@ const ContactList: React.FC = () => {
     }
   };
 
+  const goToViewContactPage = (id:any) => {
+    navigate("/contact/"+id)
+  }
+
   return (
     <div>
       {contacts.length === 0 && <p>No contacts found</p>}
@@ -63,6 +69,9 @@ const ContactList: React.FC = () => {
               </div>
             </div>
             <div>
+              <button className="bg-green-500 text-white px-4 py-1 rounded mr-2" onClick={() => goToViewContactPage(contact.id)}>
+                View
+              </button>
               <button
                 onClick={() => handleEdit(contact)}
                 className="bg-yellow-500 text-white px-4 py-1 rounded mr-2"
