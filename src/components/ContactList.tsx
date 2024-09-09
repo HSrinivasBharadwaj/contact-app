@@ -69,15 +69,18 @@ const ContactList: React.FC = () => {
               </div>
             </div>
             <div>
+              {/* View button navigation */}
               <button className="bg-green-500 text-white px-4 py-1 rounded mr-2" onClick={() => goToViewContactPage(contact.id)}>
                 View
               </button>
+              {/* Edit button */}
               <button
                 onClick={() => handleEdit(contact)}
                 className="bg-yellow-500 text-white px-4 py-1 rounded mr-2"
               >
                 Edit
               </button>
+              {/* delete button */}
               <button
                 onClick={() => dispatch(deleteContact(contact.id))}
                 className="bg-red-500 text-white px-4 py-1 rounded"
@@ -88,7 +91,7 @@ const ContactList: React.FC = () => {
           </li>
         ))}
       </ul>
-
+      {/* Condtional rendering if its true then make it show */}
       {editingContact && (
         <form
           onSubmit={handleUpdate}
