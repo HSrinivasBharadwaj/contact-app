@@ -10,7 +10,7 @@ const SideBar:React.FC = () => {
     navigate("/dashboard")
   }
   return (
-    <aside className='w-[20%] bg-gray-800 text-white flex flex-col p-5 min-h-screen'>
+    <aside className='w-[20%]  bg-gray-800 text-white flex flex-col p-5 '>
       <nav>
         <ul>
           <li onClick={goToContactsPage} className='my-3 cursor-pointer'>

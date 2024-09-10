@@ -52,7 +52,7 @@ const ContactList: React.FC = () => {
         {contacts.map((contact) => (
           <li
             key={contact.id}
-            className="flex items-center justify-between mb-4"
+            className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-between mb-4"
           >
             <div className="bg-white shadow-md rounded-lg p-4 w-full md:w-1/2 lg:w-1/3 mb-6 mx-4 border border-gray-200">
               <h1 className="font-bold text-xl">
